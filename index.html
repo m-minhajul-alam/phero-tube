@@ -34,10 +34,10 @@
 </head>
 
 <body>
-    <nav>
-        <section class="max-w-screen-lg mx-auto">
+    <header>
+        <nav class="max-w-screen-lg mx-auto">
             <!-- navbar for lg sereen -->
-            <div class="navbar hidden lg:flex bg-base-100">
+            <section class="navbar hidden lg:flex bg-base-100 border-b-2 border-secondory">
 
                 <!-- nav start -->
                 <div class="navbar-start">
@@ -54,10 +54,10 @@
                     <button class="bg-primary text-white font-medium text-sm py-1 px-2 rounded">Blog</button>
                 </div>
 
-            </div>
+            </section>
 
             <!-- navbar for mobail and tablet screen -->
-            <div class="navbar lg:hidden">
+            <section class="navbar lg:hidden border-b-2 border-secondory">
 
                 <!-- nav start -->
                 <div class="navbar-start">
@@ -95,11 +95,42 @@
 
                 </div>
 
-            </div>
-        </section>
-    </nav>
+            </section>
+        </nav>
+    </header>
     <main>
+        <section class="max-w-screen-lg mx-auto">
 
+            <section id="tab-container" class="tabs flex justify-center mt-5">
+                <!-- <a class="tab tab-active">Tab 1</a> -->
+            </section>
+
+            <section id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+
+
+                <!-- <div class="rounded-lg">
+                    <figure><img class="rounded-lg h-52 lg:h-36 w-full" src="https://i.ibb.co/L1b6xSq/shape.jpg"
+                            alt="Shoes" /></figure>
+                    <div class="flex justify-center gap-3 p-3 ">
+
+                        <div>
+                            <img class="h-10 w-10 md:w-12 lg:w-20 rounded-full"
+                                src="https://i.ibb.co/D9wWRM6/olivia.jpg" alt="">
+                        </div>
+
+                        <div>
+                            <h2 class="text-sm font-bold">Building a Winning UX Strategy Using the Kano Model</h2>
+                            <p class="text-xs font-normal pt-1">Awlad Hossain</p>
+                            <p class="text-xs font-normal pt-1">91K views</p>
+                        </div>
+
+                    </div>
+                </div> -->
+
+            </section>
+
+
+        </section>
     </main>
     <script src="./js/PHeroTube.js"></script>
 </body>
