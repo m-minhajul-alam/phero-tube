@@ -46,12 +46,14 @@
 
                 <!-- nav center -->
                 <div class="navbar-center">
-                    <a onclick="handleSortView()" class="bg-secondory font-medium text-sm py-1 px-2 rounded cursor-pointer">Sort by view</a>
+                    <a onclick="handleSortView()"
+                        class="bg-secondory font-medium text-sm py-1 px-2 rounded cursor-pointer">Sort by view</a>
                 </div>
 
                 <!-- nav end -->
                 <div class="navbar-end">
-                    <button id="blog-btn" class="bg-primary text-white font-medium text-sm py-1 px-2 rounded">Blog</button>
+                    <button id="blog-btn"
+                        class="bg-primary text-white font-medium text-sm py-1 px-2 rounded">Blog</button>
                 </div>
 
             </section>
@@ -89,7 +91,7 @@
                         <ul tabindex="0"
                             class="dropdown-content z-[1] menu p-2 bg-secondory rounded w-64 text-md text-white font-medium">
                             <li><a>Sort by view</a></li>
-                            <li  id="blog-btn"><a>Blog</a></li>
+                            <li id="blog-btn2"><a>Blog</a></li>
                         </ul>
                     </div>
 
@@ -106,7 +108,6 @@
             </section>
 
             <section id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
-
 
                 <!-- <div class="rounded-lg">
                     <figure><img class="rounded-lg h-52 lg:h-36 w-full" src="https://i.ibb.co/L1b6xSq/shape.jpg"
@@ -130,37 +131,15 @@
                     </div>
                 </div> -->
 
-
-                <!-- <div class="rounded-lg">
-
-                    <div>
-                        <img class="rounded-lg h-52 lg:h-36 w-full" src="https://i.ibb.co/L1b6xSq/shape.jpg" alt="" />
-                        <p class="text-[8px] text-white font-normal bg-secondory p-1 mt-[-22px] ml-44 rounded absolute">3hrs 56 min ago</p>
-                    </div>
-
-
-                    <div class="flex justify-center gap-3 p-3 ">
-
-                        <div>
-                            <img class="h-10 lg:h-8 w-10 lg:w-8 rounded-full" src="https://i.ibb.co/D9wWRM6/olivia.jpg"
-                                alt="">
-                        </div>
-
-                        <div id="auter-name" class="flex-1">
-                            <h2 class="text-sm font-bold">Building a Winning UX</h2>
-
-                            <div id="auther-name" class="flex items-center gap-2">
-                                <p class="text-xs font-normal pt-1">Awlad Hossain</p>
-                                <p><img class="w-4 pt-1" src="./icons/blue.png" alt=""></img></p>
-                            </div>
-                            <p class="text-xs font-normal pt-1">91K views</p>
-                        </div>
-
-                    </div>
-                </div> -->
-
             </section>
 
+            <section id="err" class="hidden">
+                <div>
+                    <div class="flex justify-center items-center"><img class="mt-20" src="./icons/Icon.png" alt="">
+                    </div>
+                    <p class="text-3xl text-center font-bold mt-4">Oops!! Sorry, There is no <br> content here</p>
+                </div>
+            </section>
 
         </section>
     </main>

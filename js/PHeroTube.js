@@ -1,7 +1,9 @@
 document.getElementById("blog-btn").addEventListener('click', function () {
     location.href = 'blog.html';
 })
-
+document.getElementById("blog-btn2").addEventListener('click', function () {
+    location.href = 'blog.html';
+})
 
 const handleCategory = async () => {
     const res = await fetch("https://openapi.programming-hero.com/api/videos/categories");
@@ -10,40 +12,46 @@ const handleCategory = async () => {
     const tabContainer = document.getElementById("tab-container")
 
     data.data.forEach(categorys => {
+
         const div = document.createElement('div');
         div.innerHTML = `
-        <a onclick="handleCards('${categorys?.category_id}')" id="active-tab" class="tab"> ${categorys?.category} {</a>
+        <a onclick="handleCards('${categorys?.category_id}')" id="active-tab" class="tab bg-secondory font-medium text-sm py-1 px-2 rounded cursor-pointer ml-2"> ${categorys?.category}</a>
         `
-
         tabContainer.appendChild(div);
+
+        const activeTab = document.getElementById('active-tab');
+        activeTab.classList.remove('bg-secondory');
+        activeTab.classList.add('bg-primary', 'text-white',);
     });
 
 }
-
-
 
 const handleCards = async (categoryId) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
     const data = await res.json();
 
-    const activeTab = document.getElementById('active-tab');
-    activeTab.classList.add('bg-primary', 'text-white', 'font-medium', 'text-sm', 'py-1', 'px-2', 'rounded');
-
-
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = "";
 
-    data.data.forEach(element => {
+    if (data.status === false) {
+        const err = document.getElementById('err');
+        err.classList.remove('hidden')
 
+    } else {
+        const err = document.getElementById('err');
+        err.classList.add('hidden')
+    }
+
+    data.data.forEach(element => {
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="rounded-lg">
                  <div>
                     <img class="rounded-lg h-52 lg:h-36 w-full" src=${element?.thumbnail} alt=""/>
-                    <p class="text-[8px] text-white font-normal bg-secondory p-1 mt-[-22px] ml-44 rounded absolute">3hrs 56 min ago</p>
+                    <p class="text-[8px] text-white font-normal bg-gray-800 p-1 mt-[-22px] ml-44 rounded absolute">3hrs 56 min ago</p>
                 </div>
                     
-                    <div class="flex justify-center gap-3 p-3 ">
+                    <div class="flex justify-center gap-3 py-3 ">
 
                         <div>
                             <img class="h-10 lg:h-8 w-10 lg:w-8 rounded-full" src=${element?.authors[0]?.profile_picture} alt="">
@@ -65,13 +73,10 @@ const handleCards = async (categoryId) => {
         cardContainer.appendChild(div)
     });
 
-
-
 }
 
-
-const handleSortView = async (categoryId) => {
-    const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
+const handleSortView = async (category) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${category}`);
     const data = await res.json();
 
     let arr = [];
@@ -83,8 +88,7 @@ const handleSortView = async (categoryId) => {
         arr.push(total)
     })
 
-
 }
 
-handleCards(1000)
+handleCards("1000")
 handleCategory()
