@@ -1,6 +1,7 @@
 document.getElementById("blog-btn").addEventListener('click', function () {
     location.href = 'blog.html';
 })
+
 document.getElementById("blog-btn2").addEventListener('click', function () {
     location.href = 'blog.html';
 })
@@ -42,13 +43,20 @@ const handleCards = async (categoryId) => {
         err.classList.add('hidden')
     }
 
+
     data.data.forEach(element => {
+
+        const totalSec = element.others?.posted_date
+        const newDate = new Date(totalSec * 1000);
+        const hour = newDate.getUTCHours()
+        const minutes = newDate.getUTCMinutes()
+
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="rounded-lg">
                  <div>
                     <img class="rounded-lg h-52 lg:h-36 w-full" src=${element?.thumbnail} alt=""/>
-                    <p class="text-[8px] text-white font-normal bg-gray-800 p-1 mt-[-22px] ml-44 rounded absolute">3hrs 56 min ago</p>
+                    <div>${(element?.others?.posted_date) ? `<p class="text-[8px] text-white font-normal bg-gray-800 p-1 mt-[-26px] ml-[170px] rounded absolute"> ${hour} hrs ${minutes} min ago </p>` : ''}</div>
                 </div>
                     
                     <div class="flex justify-center gap-3 py-3 ">
@@ -75,18 +83,33 @@ const handleCards = async (categoryId) => {
 
 }
 
+// var number = [1, 22, 33, 46, 22, 75, 1, 5, 55, 35, 8]
+// number.sort(function (a, b) {
+//     return b - a
+// })
+// document.write(number)
+
+
+
+// var students = [
+//     { name: 'salik', age: 7 },
+//     { name: 'kamrul', age: 3 },
+//     { name: 'samiul', age: 33 },
+
+// ]
+// students.sort(function (a, b) {
+//     return b.age - a.age
+// })
+// for (let i = 0; i < students.length; i++) {
+//     document.getElementById('sort-view').innerHTML +=
+//         'name:' + students[i].name + '<br>' + "age:" + students[i].age
+// }
+
+
+
 const handleSortView = async (category) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${category}`);
     const data = await res.json();
-
-    let arr = [];
-    console.log(arr)
-    data.data.forEach(element => {
-        const totalViews = element.others.views
-        const total = totalViews.innerText
-        console.log(total)
-        arr.push(total)
-    })
 
 }
 
