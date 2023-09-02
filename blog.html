@@ -19,68 +19,91 @@
 
 <body>
     <main class="max-w-screen-lg mx-auto">
-        <h1 class="text-4xl font-bold text-center py-3">Questions & Answers</h1>
-        <div>
-            <h3 class="text-2xl font-bold mt-7">Question: Discuss the scope of var, let, and const.</h3>
-            <p class="text-base font-normal mt-3"><span class="font-bold">Answer:</span> The scope of var, let, and
-                const.
-                <br>
-                <span class="font-medium">Var:</span> The scope of a variable declared with var is function-level or
-                global. This means that a variable
-                declared with var is accessible throughout the function in which it's declared or globally if declared
-                outside of any function.
-                <br>
-                <span class="font-medium">Let:</span> The keyword let in Javascript is used to declare a variable that
-                is block scoped in JavaScript. In
-                JavaScript, the var keyword is typically used to declare a variable that is treated like any other
-                variable, whereas variables declared using the let in JavaScript are block scoped.
-                <br>
-                <span class="font-medium">Const:</span> The scope of a const variable is block scope. It can be updated
-                and re-declared into the scope.
-                It can be updated but cannot be re-declared into the scope. It cannot be updated or re-declared into the
-                scope. Variables declared outside of any functions and blocks are global and are said to have Global
-                Scope
-            </p>
-        </div>
-        <div>
-            <h3 class="text-2xl font-bold mt-7">Question: Tell us the use cases of null and undefined</h3>
-            <p class="text-base font-normal mt-3"><span class="font-bold">Answer:</span> The use cases of null and
-                undefined.
-                <br>
-                <span class="font-medium">Null:</span> Null is used in programming to represent the absence of data or
-                undefined values. Common use cases include handling missing information in databases, setting default
-                values for variables, and checking for errors or optional data. It's a placeholder that helps
-                distinguish between no data and zero or empty values, aiding in data integrity and conditional logic.
-                <br>
-                <span class="font-medium">Undefined:</span>In JavaScript, undefined serves several important use cases:
-                Variable Initialization, Function Return, Missing Object Properties, Callback Handling, Optional
-                Parameters, Testing Existence, Default Values, Array Elements, JSON Parsing, Error Handling etc.
-                Overall, undefined helps handle missing or uninitialized values in JavaScript programs.
-            </p>
-        </div>
-        <div>
-            <h3 class="text-2xl font-bold mt-7">Question: What do you mean by REST API?</h3>
-            <p class="text-base font-normal mt-3"><span class="font-bold">Answer:</span> The REST API
-                <br>
-                A REST API (also known as RESTful API) is an application programming interface (API or web API) that
-                conforms to the constraints of REST architectural style and allows for interaction with RESTful web
-                services. REST stands for representational state transfer and was created by computer scientist Roy
-                Fielding.
-                <br>
-                An API is a set of definitions and protocols for building and integrating application software. It’s
-                sometimes referred to as a contract between an information provider and an information user—establishing
-                the content required from the consumer (the call) and the content required by the producer (the
-                response). For example, the API design for a weather service could specify that the user supply a zip
-                code and that the producer reply with a 2-part answer, the first being the high temperature, and the
-                second being the low.
 
-                In other words, if you want to interact with a computer or system to retrieve information or perform a
-                function, an API helps you communicate what you want to that system so it can understand and fulfill the
-                request.
-            </p>
+        <h1 class="text-4xl font-bold text-center mt-7">Questions & Answers</h1>
+
+        <div class="my-6">
+
+            <div>
+                <h3 class="text-2xl font-bold mt-10">Question 01: Discuss the scope of var, let, and const.</h3>
+                <p class="text-base font-normal mt-7"><span class="font-bold">Answer:</span> The scope of var, let, and
+                    const.
+                    <br><br>
+                    <span class="font-medium">Var:</span> The scope of a variable declared with var is function-level or
+                    global. This means that a variable
+                    declared with var is accessible throughout the function in which it's declared or globally if
+                    declared
+                    outside of any function.
+                    <br><br>
+                    <span class="font-medium">Let:</span> The keyword let in Javascript is used to declare a variable
+                    that
+                    is block scoped in JavaScript. In
+                    JavaScript, the var keyword is typically used to declare a variable that is treated like any other
+                    variable, whereas variables declared using the let in JavaScript are block scoped.
+                    <br><br>
+                    <span class="font-medium">Const:</span> The scope of a const variable is block scope. It can be
+                    updated
+                    and re-declared into the scope.
+                    It can be updated but cannot be re-declared into the scope. It cannot be updated or re-declared into
+                    the
+                    scope. Variables declared outside of any functions and blocks are global and are said to have Global
+                    Scope
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-bold mt-10">Question 02: Tell us the use cases of null and undefined.</h3>
+                <p class="text-base font-normal mt-7"><span class="font-bold">Answer:</span> The use cases of null and
+                    undefined.
+                    <br><br>
+                    <span class="font-medium">Null:</span> Null is used in programming to represent the absence of data
+                    or
+                    undefined values. Common use cases include handling missing information in databases, setting
+                    default
+                    values for variables, and checking for errors or optional data. It's a placeholder that helps
+                    distinguish between no data and zero or empty values, aiding in data integrity and conditional
+                    logic.
+                    <br><br>
+                    <span class="font-medium">Undefined:</span>In JavaScript, undefined serves several important use
+                    cases:
+                    Variable Initialization, Function Return, Missing Object Properties, Callback Handling, Optional
+                    Parameters, Testing Existence, Default Values, Array Elements, JSON Parsing, Error Handling etc.
+                    Overall, undefined helps handle missing or uninitialized values in JavaScript programs.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-bold mt-10">Question 03: What do you mean by REST API?</h3>
+                <p class="text-base font-normal mt-7"><span class="font-bold">Answer:</span> The REST API.
+                    <br><br>
+                    A REST API (also known as RESTful API) is an application programming interface (API or web API) that
+                    conforms to the constraints of REST architectural style and allows for interaction with RESTful web
+                    services. REST stands for representational state transfer and was created by computer scientist Roy
+                    Fielding.
+                    <br><br>
+                    An API is a set of definitions and protocols for building and integrating application software. It’s
+                    sometimes referred to as a contract between an information provider and an information user
+                    establishingthe content required from the consumer (the call) and the content required by the
+                    producer (the
+                    response). For example, the API design for a weather service could specify that the user supply a
+                    zip
+                    code and that the producer reply with a 2-part answer, the first being the high temperature, and the
+                    second being the low.
+
+                    In other words, if you want to interact with a computer or system to retrieve information or perform
+                    a
+                    function, an API helps you communicate what you want to that system so it can understand and fulfill
+                    the
+                    request.
+                </p>
+            </div>
+
         </div>
+
     </main>
-    <script src="./js/PHeroTube.js"></script>r
+
+    <script src="./js/PHeroTube.js"></script>
+
 </body>
 
 </html>
