@@ -1,7 +1,11 @@
+document.getElementById("blog-btn").addEventListener('click', function () {
+    location.href = 'blog.html';
+})
+
+
 const handleCategory = async () => {
     const res = await fetch("https://openapi.programming-hero.com/api/videos/categories");
     const data = await res.json();
-    console.log(data);
 
     const tabContainer = document.getElementById("tab-container")
 
@@ -10,52 +14,77 @@ const handleCategory = async () => {
         div.innerHTML = `
         <a onclick="handleCards('${categorys?.category_id}')" id="active-tab" class="tab"> ${categorys?.category} {</a>
         `
+
         tabContainer.appendChild(div);
     });
 
-    // console.log(data.data);
-
 }
 
+
+
 const handleCards = async (categoryId) => {
-
-    // const activeTab = document.getElementById('active-tab');
-    // activeTab.classList.add('tab-active');
-
     const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
     const data = await res.json();
-    // console.log(data);
+
+    const activeTab = document.getElementById('active-tab');
+    activeTab.classList.add('bg-primary', 'text-white', 'font-medium', 'text-sm', 'py-1', 'px-2', 'rounded');
+
 
     const cardContainer = document.getElementById("card-container");
     cardContainer.innerHTML = "";
 
-    // console.log(cardContainer);
-
     data.data.forEach(element => {
+
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="rounded-lg">
-                    <figure><img class="rounded-lg h-52 lg:h-36 w-full" src=${element?.thumbnail} alt="Shoes" /></figure>
+                 <div>
+                    <img class="rounded-lg h-52 lg:h-36 w-full" src=${element?.thumbnail} alt=""/>
+                    <p class="text-[8px] text-white font-normal bg-secondory p-1 mt-[-22px] ml-44 rounded absolute">3hrs 56 min ago</p>
+                </div>
+                    
                     <div class="flex justify-center gap-3 p-3 ">
 
                         <div>
                             <img class="h-10 lg:h-8 w-10 lg:w-8 rounded-full" src=${element?.authors[0]?.profile_picture} alt="">
                         </div>
 
-                        <div class="flex-1">
+                        <div id="auter-name" class="flex-1">
                             <h2 class="text-sm font-bold">${element?.title}</h2>
-                            <p class="text-xs font-normal pt-1">${element?.authors[0]?.profile_name}</p>
+                            
+                            <div id="auther-name" class="flex items-center gap-2">
+                                <p class="text-xs font-normal pt-1">${element?.authors[0]?.profile_name}</p>
+                                <p>${(element.authors[0].verified) ? '<img class="w-4 pt-1" src="./icons/blue.png" alt=""></img>' : ''} </p>
+                            </div>
                             <p class="text-xs font-normal pt-1">${element?.others?.views} views</p>
                         </div>
 
                     </div>
-                </div>
+        </div>
         `
         cardContainer.appendChild(div)
     });
 
-    // console.log(data.data.thumbnail)
+
+
 }
 
 
+const handleSortView = async (categoryId) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
+    const data = await res.json();
+
+    let arr = [];
+    console.log(arr)
+    data.data.forEach(element => {
+        const totalViews = element.others.views
+        const total = totalViews.innerText
+        console.log(total)
+        arr.push(total)
+    })
+
+
+}
+
+handleCards(1000)
 handleCategory()
