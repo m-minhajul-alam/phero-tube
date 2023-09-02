@@ -15,10 +15,6 @@ const handleCategory = async () => {
         <a onclick="handleCards('${categorys?.category_id}')" id="active-tab" class="tab bg-secondory font-medium text-sm py-1 px-4 rounded cursor-pointer mx-2"> ${categorys?.category}</a>
         `
         tabContainer.appendChild(div);
-
-        const activeTab = document.getElementById('active-tab');
-        activeTab.classList.remove('bg-secondory');
-        activeTab.classList.add('bg-primary', 'text-white',);
     });
 
 }
@@ -51,7 +47,7 @@ const handleCards = async (categoryId) => {
         <div class="rounded-lg">
             <div>
                 <img class="rounded-lg h-52 lg:h-36 w-full" src=${element?.thumbnail} alt=""/>
-                <div>${(element?.others?.posted_date) ? `<p class="text-[8px] text-white font-normal bg-gray-800 p-1 mt-[-26px] ml-[350px] md:ml-[300px] lg:ml-[170px] rounded absolute"> ${hour} hrs ${minutes} min ago </p>` : ''}</div>
+                <div>${(element?.others?.posted_date) ? `<p class="text-[8px] text-white font-normal bg-gray-800 p-1 mt-[-26px] ml-[6px] md:ml-[300px] lg:ml-[170px] rounded absolute"> ${hour} hrs ${minutes} min ago </p>` : ''}</div>
             </div>
             <div class="flex justify-center gap-3 py-3 ">
                 <div>
@@ -105,7 +101,7 @@ const handleSortView = async () => {
         <div class="rounded-lg">
             <div>
                 <img class="rounded-lg h-52 lg:h-36 w-full" src=${element?.thumbnail} alt=""/>
-                <div>${(element?.others?.posted_date) ? `<p class="text-[8px] text-white font-normal bg-gray-800 p-1 mt-[-26px] ml-[350px] md:ml-[300px] lg:ml-[170px] rounded absolute"> ${hour} hrs ${minutes} min ago </p>` : ''}</div>
+                <div>${(element?.others?.posted_date) ? `<p class="text-[8px] text-white font-normal bg-gray-800 p-1 mt-[-26px] ml-[6px] md:ml-[300px] lg:ml-[170px] rounded absolute"> ${hour} hrs ${minutes} min ago </p>` : ''}</div>
             </div>   
             <div class="flex justify-center gap-3 py-3 ">
                 <div>
